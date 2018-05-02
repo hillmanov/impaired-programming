@@ -1,3 +1,113 @@
-.container {
+%programmersList {
+  width: 280px;
+}
 
+.container {
+  padding: 10px;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  .turnCountdown {
+    min-height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    align-self: center;
+    .countdown {
+      font-size: 90px;
+      line-height: 90px;
+      transition: color .5s;
+      &.state5, &.state4 {
+        color: green;
+      }
+      &.state3, &.state2 {
+        color: orange;
+      }
+      &.state1, &.state0 {
+        color: red;
+      }
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    .description {
+      font-size: 14px;
+    }
+    .inputAndList {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      .programmersStatusList {
+        margin-top: 0px !important;
+        @extend %programmersList;
+        .programmer {
+          &.active {
+            color: green;
+            font-weight: bolder;
+          }
+        }
+      }
+      .input {
+        width: 800px;
+      }
+    }
+  }
+}
+
+.programmersList {
+  @extend %programmersList;
+}
+
+.testCaseResults {
+  .simpleError {
+    color: red;
+  }
+  .testCases {
+    display: flex;
+    flex-direction: column;
+    .testCase {
+      display: flex;
+      border-bottom: 1px solid #e3e3e3;
+      height: 30px;
+      flex-direction: row;
+      align-items: center;
+      .status {
+        &.passing {
+          color: green;
+        }
+        &.error {
+          color: red;
+        }
+      }
+      .code {
+        padding: 0;
+        margin: 0;
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+
+.register {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  .content {
+    width: 250px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    margin-bottom: 10vh !important;
+  }
 }
